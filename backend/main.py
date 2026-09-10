@@ -2,9 +2,12 @@ import sys
 from pathlib import Path
 import asyncio
 
-# Add repo root to sys.path so src.* imports work
-REPO_ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(REPO_ROOT))
+# Add repo root and backend directory to sys.path so imports work from root or backend
+BACKEND_DIR = Path(__file__).resolve().parent
+REPO_ROOT = BACKEND_DIR.parent
+for p in (str(REPO_ROOT), str(BACKEND_DIR)):
+    if p not in sys.path:
+        sys.path.insert(0, p)
 
 from dotenv import load_dotenv
 # Load existing .env from repo root
@@ -46,5 +49,6 @@ app.include_router(ai.router, prefix="/api", tags=["ai"])
 app.include_router(export.router, prefix="/api", tags=["export"])
 
 @app.get("/")
+@app.get("/health")
 async def health_check():
     return {"status": "ok", "service": "impactx-backend"}

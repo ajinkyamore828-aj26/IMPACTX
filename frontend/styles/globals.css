@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-page: #080D1A;
+  --bg-card: #0E131F;
+  --accent: #6366F1;
+  --accent-light: #818CF8;
+  --success: #10B981;
+  --border: rgba(255, 255, 255, 0.08);
+}
+
+body {
+  background: var(--bg-page);
+  color: #FFFFFF;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Card */
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+/* Metric card */
+.metric-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+.metric-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #94A3B8; margin-bottom: 6px; }
+.metric-value { font-size: 28px; font-weight: 800; color: #FFFFFF; line-height: 1; margin-bottom: 4px; }
+.metric-subtext { font-size: 11px; color: #64748B; }
+
+/* Buttons */
+.btn-primary {
+  background: var(--accent);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  width: 100%;
+  text-align: center;
+}
+.btn-primary:hover { opacity: 0.88; }
+.btn-secondary {
+  background: rgba(255,255,255,0.05);
+  color: #94A3B8;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.15s;
+  width: 100%;
+  text-align: center;
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.09); color: #FFFFFF; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 3px; }
+
+/* Navbar divider */
+.nav-divider { height: 1px; background: rgba(255,255,255,0.08); margin: 6px 0 20px 0; }
+
+/* Tab active */
+.tab-active { background: var(--accent) !important; color: #FFFFFF !important; border-color: transparent !important; }
+
+/* Status dot */
+.status-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #10B981; margin-right: 6px; }
+
+/* Progress bar */
+.progress-bar { height: 4px; background: rgba(255,255,255,0.08); border-radius: 2px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--accent); border-radius: 2px; transition: width 0.3s; }
+
+/* Table */
+table { border-collapse: collapse; width: 100%; }
+th { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; color: #64748B; padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.08); text-align: left; }
+td { font-size: 13px; color: #E2E8F0; padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+tr:hover td { background: rgba(255,255,255,0.02); }
+
+/* Sidebar */
+.sidebar { background: #0A0F1C; border-right: 1px solid rgba(255,255,255,0.07); min-height: 100vh; width: 220px; flex-shrink: 0; padding: 20px 16px; }
+
+/* Expander/accordion */
+.expander { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 16px; }
+.expander-header { padding: 14px 18px; font-weight: 600; font-size: 14px; color: #FFFFFF; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+.expander-body { padding: 16px 20px; border-top: 1px solid rgba(255,255,255,0.06); }
+
+/* Code chip */
+code { background: rgba(255,255,255,0.07); color: #C7D2FE; padding: 1px 5px; border-radius: 4px; font-family: 'JetBrains Mono', monospace; font-size: 0.85em; }
+
+/* Markdown in AI responses */
+.ai-response h4 { font-size: 14px; font-weight: 700; color: #A5B4FC; margin: 16px 0 8px 0; }
+.ai-response p { font-size: 13px; color: #CBD5E1; line-height: 1.65; margin-bottom: 10px; }
+.ai-response ul { padding-left: 20px; margin-bottom: 10px; }
+.ai-response li { font-size: 13px; color: #CBD5E1; line-height: 1.6; margin-bottom: 4px; }
+.ai-response strong { color: #E2E8F0; }

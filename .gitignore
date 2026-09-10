@@ -1,0 +1,131 @@
+# =============================================================================
+# ImpactX Project Root .gitignore
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Node.js & Next.js Frontend
+# -----------------------------------------------------------------------------
+node_modules/
+*/node_modules/
+frontend/node_modules/
+.next/
+frontend/.next/
+out/
+frontend/out/
+build/
+dist/
+.vercel
+*.tsbuildinfo
+
+# Node debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.pnpm-store
+
+# -----------------------------------------------------------------------------
+# Python & Bytecode
+# -----------------------------------------------------------------------------
+__pycache__/
+*/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribution / packaging
+develop-eggs/
+eggs/
+.eggs/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+nosetests.xml
+coverage.xml
+*.cover
+
+# -----------------------------------------------------------------------------
+# Environment & Secrets (Never commit credentials)
+# -----------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+!.env.local.example
+frontend/.env.local
+frontend/.env.*.local
+*.local
+
+# -----------------------------------------------------------------------------
+# Temporary Data, Upload Sandboxes & Cache
+# -----------------------------------------------------------------------------
+impactx_upload_*
+tmp/
+temp/
+*.tmp
+*.log
+logs/
+
+# Data directories (keep directory structure via .gitkeep)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Output artifacts from testing
+test_output.*
+test_out.*
+*.pdf
+*.docx
+!docs/*.pdf
+!docs/*.docx
+
+# Uploaded zip archives
+*.zip
+!sample_projects/*.zip
+*.tar
+*.tar.gz
+*.tgz
+
+# -----------------------------------------------------------------------------
+# Operating System & IDE Files
+# -----------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.swp
+*.swo
+*~
